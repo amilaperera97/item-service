@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: item-service
+    prefix: ite
+
+server:
+  servlet:
+    context-path: /item-service
+  port: ${SERVER_PORT:8899}
+  tomcat:
+    threads:
+      max: ${TOMCAT_MAX_THREADS:50}
+      min-spare: ${TOMCAT_MIN_THREADS:20}
+    accept-count: ${TOMCAT_ACCEPT_COUNT:300}
+    basedir: /
+    accesslog:
+      enabled: true
+      directory: "/logs/item-service"
+      prefix: access_log
+      buffered: false
+      suffix: .log
+      file-date-format: .yyyy-MM-dd
+      pattern: "%h %l %u %t %r %s %b %D"
+
