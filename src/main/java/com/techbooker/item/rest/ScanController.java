@@ -1,11 +1,10 @@
 package com.techbooker.item.rest;
 
-import com.techbooker.item.dto.ContactInfoDto;
 import com.techbooker.item.dto.ItemInfoResponseDto;
 import com.techbooker.item.dto.ItemRequestDto;
-import com.techbooker.item.dto.external.ValidateBranchInfoDto;
+import com.techbooker.item.dto.external.ShopEndpointInfoDto;
 import com.techbooker.item.service.ItemService;
-import com.techbooker.item.service.ShopService;
+import com.techbooker.item.util.ExternalDataUtil;
 import com.techbooker.sm.util.dto.ResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Map;
+
 import static com.techbooker.item.util.constance.ControllerConstance.*;
 
 @RequestMapping(API_V1)
@@ -22,8 +24,6 @@ import static com.techbooker.item.util.constance.ControllerConstance.*;
 @AllArgsConstructor
 @Slf4j
 public class ScanController {
-
-    private ShopService shopService;
     private final ItemService itemService;
 
     @PostMapping(value = ITEM, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)

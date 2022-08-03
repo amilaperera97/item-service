@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class ItemRequestDto extends CommonDataDto {
-    private int barcode;
+    private String barcode;
     private ContactInfoDto contactInfoDto;
     private int branchId;
     private String branchName;

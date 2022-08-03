@@ -8,4 +8,7 @@ public class ControllerConstance {
     public static final String API_V1 = "/api/v1";
 
     public static final String ITEM = "/item";
+
+    //Data validation
+    public static final String REFRESH = "/refresh";
 }

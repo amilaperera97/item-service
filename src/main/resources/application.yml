@@ -1,3 +1,7 @@
+shop-service:
+  properties:
+
+
 spring:
   application:
     name: item-service
@@ -22,3 +26,15 @@ server:
       file-date-format: .yyyy-MM-dd
       pattern: "%h %l %u %t %r %s %b %D"
 
+external-service:
+  shop-service:
+    base-url: http://localhost:8898/shop-service
+    find-endpoints: /api/v1/public/endpoint
+
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:9191/oauth/check_token
+    client:
+      client-id: mobile
+      client-secret: pin
