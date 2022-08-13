@@ -2,9 +2,7 @@ package com.techbooker.item.rest;
 
 import com.techbooker.item.dto.ItemInfoResponseDto;
 import com.techbooker.item.dto.ItemRequestDto;
-import com.techbooker.item.dto.external.ShopEndpointInfoDto;
 import com.techbooker.item.service.ItemService;
-import com.techbooker.item.util.ExternalDataUtil;
 import com.techbooker.sm.util.dto.ResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,9 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-import java.util.Map;
 
 import static com.techbooker.item.util.constance.ControllerConstance.*;
 
@@ -51,6 +46,6 @@ public class ScanController {
             log.error("Error while validating data with external service : {}", e.getMessage());
             return new ResponseDto<ItemInfoResponseDto>().buildFailureMsg(e);
         }*/
-        return new ResponseDto<ItemInfoResponseDto>().buildSuccessMsgWithData(itemService.find(itemRequest));
+        return new ResponseDto<ItemInfoResponseDto>().buildSuccessMsgWithData(itemService.searchInfo(itemRequest));
     }
 }

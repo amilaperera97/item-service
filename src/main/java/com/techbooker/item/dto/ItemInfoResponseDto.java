@@ -5,7 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
+//@Builder
+@NoArgsConstructor
 public class ItemInfoResponseDto {
     private String barcode;
     private String name;

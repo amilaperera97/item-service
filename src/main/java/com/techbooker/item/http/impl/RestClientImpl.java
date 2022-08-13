@@ -41,7 +41,7 @@ public class RestClientImpl implements ClientMethod {
             if (exception.getStatusCode() == HttpStatus.NOT_FOUND) {
                 log.info("No data found {}", url);
             } else {
-                log.info("rest client exception", exception.getMessage());
+                log.info("rest client exception {}", exception.getMessage());
             }
         }
         return null;

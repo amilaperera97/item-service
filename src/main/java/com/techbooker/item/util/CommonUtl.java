@@ -5,11 +5,13 @@ import com.techbooker.item.annotation.JsonToPojoCustomAnnotator;
 import lombok.extern.slf4j.Slf4j;
 import org.jsonschema2pojo.*;
 import org.jsonschema2pojo.rules.RuleFactory;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
 
 @Slf4j
+@Component
 public class CommonUtl {
     public static void convertJsonToPojoClass(String json, String packageName, String javaClassName, File outputPojoDirectory) {
         GenerationConfig config = jsonToPojoCustomConfig();
@@ -57,4 +59,6 @@ public class CommonUtl {
             }
         };
     }
+
+
 }
