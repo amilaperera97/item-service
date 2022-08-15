@@ -1,12 +1,14 @@
 package com.techbooker.item.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-//@Builder
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class ItemInfoResponseDto {
     private String barcode;
     private String name;
